@@ -12,7 +12,15 @@ config_version=5
 
 config/name="SubstanceAbuse"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://waste/icon.svg"
+
+[autoload]
+
+Core="*uid://d2rmsfpcg5882"
+EventBus="*uid://d3fntjotxqkjv"
+SceneLoader="*uid://brap4hcda6fus"
+GameStateManager="*uid://ofy50cxxwi46"
+Rng="*uid://6e75pry34jg1"
 
 [display]
 
