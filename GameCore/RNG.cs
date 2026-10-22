@@ -1,11 +1,13 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
+namespace SubstanceAbuse.GameCore;
 
 public partial class RNG : RefCounted
 {
-	private RandomNumberGenerator _rng = new();
+	private Godot.RandomNumberGenerator _rng = new();
 
 	public void SetSeed(string stringSeed)
 	{
@@ -15,8 +17,7 @@ public partial class RNG : RefCounted
 
 	public int Range(int min, int max) => _rng.RandiRange(min, max);
 	public float RangeF(float min, float max) => _rng.RandfRange(min, max);
-
-	public T PickWeighted<T>(System.Collections.Generic.IReadOnlyList<(T item, float weight)> pool)
+	public T PickWeighted<T>(IReadOnlyList<(T item, float weight)> pool)
 	{
 		float total = 0f;
 		foreach (var (_, w) in pool) total += w;

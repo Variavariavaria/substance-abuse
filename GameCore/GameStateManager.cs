@@ -1,22 +1,13 @@
 using Godot;
 using System;
+using SubstanceAbuse.GameCore;
 
 public partial class GameStateManager : Node
 {
-	public enum GameStates
-	{
-		MainMenu,
-		GameStarting,
-		GameRunning,
-		GameEnding,
-		SettingsScreen,
-		SaveGame,
-		LoadGame
-	}
 
-	private GameStates _state = GameStates.MainMenu;
+	private GameState _state = GameState.MainMenu;
 
-	public GameStates StateCurrent
+	public GameState StateCurrent
 	{
 		get => _state;
 		set

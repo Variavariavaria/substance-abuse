@@ -1,6 +1,6 @@
 using Godot;
 using System;
-
+namespace SubstanceAbuse.GameCore;
 public partial class Core : Node
 {
 	public static Core Instance { get; private set; }

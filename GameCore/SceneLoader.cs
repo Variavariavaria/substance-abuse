@@ -1,5 +1,6 @@
 using Godot;
 using System;
+namespace SubstanceAbuse.GameCore;
 
 public partial class SceneLoader : Node
 {
