@@ -260,21 +260,9 @@ public partial class StatsPage : Control
         _ => UiStyle.Text.ReservationTooltip,
     };
 
-    private static Label Header(string text)
-    {
-        var label = new Label { Text = text, AutowrapMode = TextServer.AutowrapMode.WordSmart };
-        label.AddThemeFontSizeOverride("font_size", UiStyle.HeaderFontSize);
-        label.AddThemeColorOverride("font_color", UiStyle.TextColor);
-        return label;
-    }
+    private static Label Header(string text) => UiStyle.Header(text);
 
-    private static Label Body(string text)
-    {
-        var label = new Label { Text = text, AutowrapMode = TextServer.AutowrapMode.WordSmart };
-        label.AddThemeFontSizeOverride("font_size", UiStyle.FontSize);
-        label.AddThemeColorOverride("font_color", UiStyle.TextColor);
-        return label;
-    }
+    private static Label Body(string text) => UiStyle.Body(text);
 
     private static void AddBar(VBoxContainer parent, string title, Color color,
         out ProgressBar bar, out Label value)

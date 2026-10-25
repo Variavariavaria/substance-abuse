@@ -55,7 +55,7 @@ public static class UiStyle
 
     public static Label Header(string text)
     {
-        var label = new Label { Text = text, AutowrapMode = TextServer.AutowrapMode.WordSmart };
+        var label = new Label { Text = text };
         label.AddThemeFontSizeOverride("font_size", HeaderFontSize);
         label.AddThemeColorOverride("font_color", TextColor);
         return label;
@@ -63,7 +63,7 @@ public static class UiStyle
 
     public static Label Body(string text)
     {
-        var label = new Label { Text = text, AutowrapMode = TextServer.AutowrapMode.WordSmart };
+        var label = new Label { Text = text };
         label.AddThemeFontSizeOverride("font_size", FontSize);
         label.AddThemeColorOverride("font_color", TextColor);
         return label;
