@@ -3,9 +3,9 @@ using System;
 using System.Security.Cryptography;
 using System.Text;
 
-public partial class RNG : RefCounted
+public partial class RNG : Node
 {
-	private RandomNumberGenerator _rng = new();
+	private Godot.RandomNumberGenerator _rng = new Godot.RandomNumberGenerator();
 
 	public void SetSeed(string stringSeed)
 	{
