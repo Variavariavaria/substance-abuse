@@ -224,9 +224,10 @@ public static class PlayerDataSelfTest
             ItemID = "test_plain",
             ItemName = "Обычный предмет",
         });
-        Check("17-18. null-предмет и не-оружие не принимаются",
-            !addedNull && !equippedPlain && player.Inventory.Count == 0 &&
-            player.Weapon == null);
+        Check("17. null-предмет не добавляется",
+            !addedNull && player.Inventory.Count == 0);
+        Check("18. Не-оружие не экипируется",
+            !equippedPlain && player.Weapon == null);
     }
 
     private static void Scenario19To22()
