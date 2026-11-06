@@ -1,6 +1,6 @@
 using Godot;
 using System;
-using SubstanceAbuse.GameCore;
+namespace SubstanceAbuse.GameCore;
 
 public partial class GameStateManager : Node
 {
@@ -18,15 +18,12 @@ public partial class GameStateManager : Node
 			Core.Instance.Bus.EmitStateChanged(old, _state);
 		}
 	}
-
-	private bool _traderPopup;
 	public bool TraderPopup
 	{
-		get => _traderPopup;
-		set
+		get;
+		set 
 		{
-			if (_traderPopup == value) return;
-			_traderPopup = value;
+			field = value; 
 			Core.Instance.Bus.EmitTraderPopupChanged(value);
 		}
 	}
