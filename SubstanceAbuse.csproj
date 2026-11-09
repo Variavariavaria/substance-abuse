@@ -5,6 +5,8 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="UIElements\" />
+    <Content Include="UIElements\MainMenu\MainMenu.tscn" />
+    <Content Include="UIElements\Settings\Settings.tscn" />
+    <Content Include="UIElements\StartGame\StartGame.tscn" />
   </ItemGroup>
 </Project>

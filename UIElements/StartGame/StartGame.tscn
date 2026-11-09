@@ -1,0 +1,109 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://ci7ocx10tce7x" path="res://UIElements/StartGame/StartGame.cs" id="1_script"]
+[ext_resource type="PackedScene" path="res://UIElements/Effects/FogOverlay.tscn" id="2_fog"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_start_normal"]
+content_margin_left = 18.0
+content_margin_top = 16.0
+content_margin_right = 18.0
+content_margin_bottom = 16.0
+bg_color = Color(0.045, 0.05, 0.045, 0.8)
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_width_left = 1
+border_color = Color(0.34, 0.35, 0.3, 0.42)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_start_hover"]
+content_margin_left = 18.0
+content_margin_top = 16.0
+content_margin_right = 18.0
+content_margin_bottom = 16.0
+bg_color = Color(0.115, 0.125, 0.105, 0.92)
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_width_left = 1
+border_color = Color(0.56, 0.57, 0.46, 0.85)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_start_pressed"]
+content_margin_left = 18.0
+content_margin_top = 16.0
+content_margin_right = 18.0
+content_margin_bottom = 16.0
+bg_color = Color(0.17, 0.165, 0.125, 0.96)
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_width_left = 1
+border_color = Color(0.72, 0.7, 0.52, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_start_focus"]
+bg_color = Color(0, 0, 0, 0)
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_width_left = 2
+border_color = Color(0.66, 0.67, 0.52, 0.95)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="Theme_start"]
+Button/colors/font_color = Color(0.74, 0.73, 0.65, 1)
+Button/colors/font_hover_color = Color(0.93, 0.92, 0.8, 1)
+Button/colors/font_focus_color = Color(0.82, 0.83, 0.67, 1)
+Button/colors/font_pressed_color = Color(0.96, 0.93, 0.76, 1)
+Button/font_sizes/font_size = 18
+Button/styles/normal = SubResource("StyleBoxFlat_start_normal")
+Button/styles/hover = SubResource("StyleBoxFlat_start_hover")
+Button/styles/pressed = SubResource("StyleBoxFlat_start_pressed")
+Button/styles/focus = SubResource("StyleBoxFlat_start_focus")
+
+[node name="StartGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_start")
+script = ExtResource("1_script")
+
+[node name="FogOverlay" parent="." instance=ExtResource("2_fog")]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Options" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="NewGameButton" type="Button" parent="CenterContainer/Options"]
+custom_minimum_size = Vector2(190, 210)
+layout_mode = 2
+text = "Новая игра"
+
+[node name="LoadGameButton" type="Button" parent="CenterContainer/Options"]
+custom_minimum_size = Vector2(190, 210)
+layout_mode = 2
+text = "Загрузить игру"
