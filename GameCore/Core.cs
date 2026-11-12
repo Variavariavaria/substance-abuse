@@ -15,6 +15,7 @@ public partial class Core : Node
 	{
 		Instance = this;
 		Random = new RNG();
+		AddChild(Random);
 		Random.SetSeed("Dev_Seed_12345");
 	}
 }

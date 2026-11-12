@@ -5,9 +5,9 @@ using System.Security.Cryptography;
 using System.Text;
 namespace SubstanceAbuse.GameCore;
 
-public partial class RNG : RefCounted
+public partial class RNG : Node
 {
-	private Godot.RandomNumberGenerator _rng = new();
+	private Godot.RandomNumberGenerator _rng = new Godot.RandomNumberGenerator();
 
 	public void SetSeed(string stringSeed)
 	{
