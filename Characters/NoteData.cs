@@ -7,7 +7,7 @@ namespace SubstanceAbuse.Characters;
 [GlobalClass]
 public partial class NoteData : Resource
 {
-    [Export] public string NoteId { get; set; } = "";
-    [Export] public string Title { get; set; } = "";
-    [Export(PropertyHint.MultilineText)] public string Text { get; set; } = "";
+	[Export] public string NoteId { get; set; } = "";
+	[Export] public string Title { get; set; } = "";
+	[Export(PropertyHint.MultilineText)] public string Text { get; set; } = "";
 }

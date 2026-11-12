@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://b4jpan4iid76u"]
 
-[ext_resource type="Script" path="res://UI/GameScreen.cs" id="1_gamescreen"]
+[ext_resource type="Script" uid="uid://gd03ylc4b4au" path="res://UI/GameScreen.cs" id="1_gamescreen"]
 
-[node name="GameScreen" type="Control"]
+[node name="GameScreen" type="Control" unique_id=1734584862]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

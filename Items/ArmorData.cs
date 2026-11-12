@@ -7,5 +7,5 @@ namespace SubstanceAbuse.Items;
 [GlobalClass]
 public partial class ArmorData : ItemData
 {
-    [Export] public int DefenceMod { get; set; } = 0;
+	[Export] public int DefenceMod { get; set; } = 0;
 }

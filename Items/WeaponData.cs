@@ -7,6 +7,6 @@ namespace SubstanceAbuse.Items;
 [GlobalClass]
 public partial class WeaponData : ItemData
 {
-    [Export] public int MinDamage { get; set; } = 1;
-    [Export] public int MaxDamage { get; set; } = 1;
+	[Export] public int MinDamage { get; set; } = 1;
+	[Export] public int MaxDamage { get; set; } = 1;
 }
