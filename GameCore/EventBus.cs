@@ -1,5 +1,6 @@
 using Godot;
 using System;
+namespace SubstanceAbuse.GameCore;
 
 public partial class EventBus : Node
 {
@@ -15,5 +16,5 @@ public partial class EventBus : Node
 		=> OnPlayerHealthChanged?.Invoke(currentHealth);
 
 	public void EmitTraderPopupChanged(bool isOpen)
-		=> OnTraderPopupChanged?.Invoke(isOpen);
+		=> OnTraderOpened?.Invoke(isOpen);
 }

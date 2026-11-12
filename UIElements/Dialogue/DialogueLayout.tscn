@@ -1,0 +1,236 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://UIElements/Dialogue/DialogueLayout.cs" id="1_script"]
+[ext_resource type="PackedScene" path="res://UIElements/Effects/FogOverlay.tscn" id="2_fog"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frame"]
+bg_color = Color(0.03, 0.035, 0.03, 0.52)
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_width_left = 1
+border_color = Color(0.34, 0.35, 0.29, 0.4)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_choice_normal"]
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+bg_color = Color(0.02, 0.025, 0.02, 0.24)
+border_width_left = 2
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.24, 0.26, 0.21, 0.2)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_choice_hover"]
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+bg_color = Color(0.1, 0.11, 0.09, 0.68)
+border_width_left = 3
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.56, 0.57, 0.46, 0.85)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_choice_pressed"]
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+bg_color = Color(0.17, 0.17, 0.13, 0.88)
+border_width_left = 3
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.72, 0.7, 0.52, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_choice_focus"]
+bg_color = Color(0, 0, 0, 0)
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_width_left = 2
+border_color = Color(0.66, 0.67, 0.52, 0.9)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_response"]
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 12.0
+bg_color = Color(0.02, 0.025, 0.02, 0.72)
+border_width_left = 3
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.63, 0.65, 0.49, 0.85)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="Theme_choices"]
+Button/colors/font_color = Color(0.74, 0.73, 0.65, 1)
+Button/colors/font_hover_color = Color(0.93, 0.92, 0.8, 1)
+Button/colors/font_focus_color = Color(0.82, 0.83, 0.67, 1)
+Button/colors/font_pressed_color = Color(0.96, 0.93, 0.76, 1)
+Button/font_sizes/font_size = 18
+Button/styles/normal = SubResource("StyleBoxFlat_choice_normal")
+Button/styles/hover = SubResource("StyleBoxFlat_choice_hover")
+Button/styles/pressed = SubResource("StyleBoxFlat_choice_pressed")
+Button/styles/focus = SubResource("StyleBoxFlat_choice_focus")
+
+[node name="DialogueLayout" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="FogOverlay" parent="." instance=ExtResource("2_fog")]
+
+[node name="ScreenMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = 36.0
+offset_right = -48.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogueFrame" type="PanelContainer" parent="ScreenMargin"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_frame")
+
+[node name="DialogueContent" type="Control" parent="ScreenMargin/DialogueFrame"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="ScreenMargin/DialogueFrame/DialogueContent"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+offset_left = 28.0
+offset_top = 20.0
+offset_right = 148.0
+offset_bottom = 58.0
+theme = SubResource("Theme_choices")
+text = "‹ Назад"
+
+[node name="Choices" type="Control" parent="ScreenMargin/DialogueFrame/DialogueContent"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_top = 84.0
+offset_right = -44.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_choices")
+
+[node name="Choice1" type="Button" parent="ScreenMargin/DialogueFrame/DialogueContent/Choices"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 52)
+layout_mode = 1
+anchors_preset = 0
+text = "Вариант диалога 1"
+alignment = 0
+autowrap_mode = 3
+
+[node name="Choice2" type="Button" parent="ScreenMargin/DialogueFrame/DialogueContent/Choices"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 52)
+layout_mode = 1
+anchors_preset = 0
+text = "Вариант диалога 2"
+alignment = 0
+autowrap_mode = 3
+
+[node name="Choice3" type="Button" parent="ScreenMargin/DialogueFrame/DialogueContent/Choices"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 52)
+layout_mode = 1
+anchors_preset = 0
+text = "Вариант диалога 3"
+alignment = 0
+autowrap_mode = 3
+
+[node name="Choice4" type="Button" parent="ScreenMargin/DialogueFrame/DialogueContent/Choices"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 52)
+layout_mode = 1
+anchors_preset = 0
+text = "Вариант диалога 4"
+alignment = 0
+autowrap_mode = 3
+
+[node name="Choice5" type="Button" parent="ScreenMargin/DialogueFrame/DialogueContent/Choices"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 52)
+layout_mode = 1
+anchors_preset = 0
+text = "Вариант диалога 5"
+alignment = 0
+autowrap_mode = 3
+
+[node name="NpcResponsePanel" type="PanelContainer" parent="ScreenMargin/DialogueFrame/DialogueContent"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.04
+anchor_top = 0.76
+anchor_right = 0.96
+anchor_bottom = 0.92
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_response")
+
+[node name="ResponseLayout" type="VBoxContainer" parent="ScreenMargin/DialogueFrame/DialogueContent/NpcResponsePanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ResponseHeader" type="Label" parent="ScreenMargin/DialogueFrame/DialogueContent/NpcResponsePanel/ResponseLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.74, 0.54, 1)
+theme_override_font_sizes/font_size = 13
+text = "ЕГО ОТВЕТЫ НА ТО, ЧТО ГОВОРИТ ИГРОК"
+
+[node name="NpcResponseText" type="Label" parent="ScreenMargin/DialogueFrame/DialogueContent/NpcResponsePanel/ResponseLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.86, 0.84, 0.73, 1)
+theme_override_font_sizes/font_size = 18
+text = "Выберите вариант ответа..."
+autowrap_mode = 3
+
+

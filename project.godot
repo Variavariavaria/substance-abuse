@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="SubstanceAbuse"
+run/main_scene="uid://bia42yt7x8c1m"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://waste/icon.svg"
 

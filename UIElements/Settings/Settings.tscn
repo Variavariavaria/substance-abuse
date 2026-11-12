@@ -1,0 +1,560 @@
+[gd_scene format=3 uid="uid://ugm35saif8wk"]
+
+[ext_resource type="Script" uid="uid://d0551appt82we" path="res://UIElements/Settings/Settings.cs" id="1_script"]
+[ext_resource type="PackedScene" path="res://UIElements/Effects/FogOverlay.tscn" id="2_fog"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slider_fill"]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.45, 0.46, 0.36, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slider_fill_highlight"]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.6, 0.61, 0.47, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slider_track"]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.12, 0.13, 0.11, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_option_focus"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.64, 0.65, 0.5, 0.95)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_option_hover"]
+content_margin_left = 14.0
+content_margin_top = 6.0
+content_margin_right = 34.0
+content_margin_bottom = 6.0
+bg_color = Color(0.11, 0.12, 0.1, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.52, 0.53, 0.43, 0.9)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_option_normal"]
+content_margin_left = 14.0
+content_margin_top = 6.0
+content_margin_right = 34.0
+content_margin_bottom = 6.0
+bg_color = Color(0.05, 0.055, 0.05, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.33, 0.34, 0.29, 0.55)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_option_pressed"]
+content_margin_left = 14.0
+content_margin_top = 6.0
+content_margin_right = 34.0
+content_margin_bottom = 6.0
+bg_color = Color(0.17, 0.17, 0.13, 0.98)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7, 0.68, 0.5, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Theme" id="Theme_controls"]
+CheckButton/colors/font_color = Color(0.74, 0.73, 0.65, 1)
+CheckButton/colors/font_focus_color = Color(0.82, 0.83, 0.67, 1)
+CheckButton/colors/font_hover_color = Color(0.93, 0.92, 0.8, 1)
+CheckButton/colors/font_pressed_color = Color(0.96, 0.93, 0.76, 1)
+CheckButton/font_sizes/font_size = 16
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_slider_fill")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_slider_fill_highlight")
+HSlider/styles/slider = SubResource("StyleBoxFlat_slider_track")
+OptionButton/colors/font_color = Color(0.74, 0.73, 0.65, 1)
+OptionButton/colors/font_focus_color = Color(0.82, 0.83, 0.67, 1)
+OptionButton/colors/font_hover_color = Color(0.93, 0.92, 0.8, 1)
+OptionButton/colors/font_pressed_color = Color(0.96, 0.93, 0.76, 1)
+OptionButton/font_sizes/font_size = 16
+OptionButton/styles/focus = SubResource("StyleBoxFlat_option_focus")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_option_hover")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_option_normal")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_option_pressed")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_focus"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.64, 0.65, 0.5, 0.95)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_hover"]
+content_margin_left = 22.0
+content_margin_top = 10.0
+content_margin_right = 22.0
+content_margin_bottom = 10.0
+bg_color = Color(0.115, 0.125, 0.105, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.54, 0.55, 0.45, 0.85)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_normal"]
+content_margin_left = 22.0
+content_margin_top = 10.0
+content_margin_right = 22.0
+content_margin_bottom = 10.0
+bg_color = Color(0.045, 0.05, 0.045, 0.75)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.34, 0.35, 0.3, 0.4)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab_pressed"]
+content_margin_left = 22.0
+content_margin_top = 10.0
+content_margin_right = 22.0
+content_margin_bottom = 10.0
+bg_color = Color(0.17, 0.17, 0.13, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.72, 0.7, 0.52, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_tabs"]
+Button/colors/font_color = Color(0.74, 0.73, 0.65, 1)
+Button/colors/font_focus_color = Color(0.82, 0.83, 0.67, 1)
+Button/colors/font_hover_color = Color(0.93, 0.92, 0.8, 1)
+Button/colors/font_pressed_color = Color(0.96, 0.93, 0.76, 1)
+Button/font_sizes/font_size = 18
+Button/styles/focus = SubResource("StyleBoxFlat_tab_focus")
+Button/styles/hover = SubResource("StyleBoxFlat_tab_hover")
+Button/styles/normal = SubResource("StyleBoxFlat_tab_normal")
+Button/styles/pressed = SubResource("StyleBoxFlat_tab_pressed")
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_tabs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_content"]
+bg_color = Color(0.04, 0.045, 0.04, 0.68)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.34, 0.35, 0.29, 0.34)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Settings" type="Control" unique_id=957831014]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_controls")
+script = ExtResource("1_script")
+
+[node name="FogOverlay" parent="." unique_id=2089050867 instance=ExtResource("2_fog")]
+layout_mode = 1
+
+[node name="OuterMargin" type="MarginContainer" parent="." unique_id=1699523112]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = 40.0
+offset_right = -56.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="SettingsLayout" type="VBoxContainer" parent="OuterMargin" unique_id=929419898]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Tabs" type="HBoxContainer" parent="OuterMargin/SettingsLayout" unique_id=368054770]
+layout_mode = 2
+theme = SubResource("Theme_tabs")
+theme_override_constants/separation = 8
+
+[node name="AudioButton" type="Button" parent="OuterMargin/SettingsLayout/Tabs" unique_id=2058940131]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 42)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_tabs")
+text = "Аудио"
+
+[node name="VideoButton" type="Button" parent="OuterMargin/SettingsLayout/Tabs" unique_id=1489422059]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 42)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_tabs")
+text = "Видео"
+
+[node name="ControlsButton" type="Button" parent="OuterMargin/SettingsLayout/Tabs" unique_id=220009704]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 42)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_tabs")
+text = "Управление"
+
+[node name="ContentFrame" type="PanelContainer" parent="OuterMargin/SettingsLayout" unique_id=117553563]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_content")
+
+[node name="ContentMargin" type="MarginContainer" parent="OuterMargin/SettingsLayout/ContentFrame" unique_id=9060980]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 24
+
+[node name="Sections" type="Control" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin" unique_id=1530405988]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AudioPanel" type="VBoxContainer" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections" unique_id=1966188758]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/AudioPanel" unique_id=736123917]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.86, 0.84, 0.73, 1)
+theme_override_font_sizes/font_size = 26
+text = "Аудио"
+
+[node name="Hint" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/AudioPanel" unique_id=1511612158]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.56, 0.57, 0.49, 1)
+text = "Настройка громкости"
+
+[node name="VolumeGrid" type="GridContainer" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/AudioPanel" unique_id=2132382663]
+layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 18
+columns = 3
+
+[node name="OverallVolumeLabel" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/AudioPanel/VolumeGrid" unique_id=131396589]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+text = "Общая громкость"
+vertical_alignment = 1
+
+[node name="OverallVolumeSlider" type="HSlider" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/AudioPanel/VolumeGrid" unique_id=2108815070]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 80.0
+
+[node name="OverallVolumeValue" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/AudioPanel/VolumeGrid" unique_id=1105570589]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+text = "80%"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MusicLabel" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/AudioPanel/VolumeGrid" unique_id=124743450]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+text = "Музыка"
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/AudioPanel/VolumeGrid" unique_id=456684876]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 70.0
+
+[node name="MusicValue" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/AudioPanel/VolumeGrid" unique_id=1508597509]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+text = "70%"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="EffectsLabel" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/AudioPanel/VolumeGrid" unique_id=1036807622]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+text = "Звуковые эффекты"
+vertical_alignment = 1
+
+[node name="EffectsSlider" type="HSlider" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/AudioPanel/VolumeGrid" unique_id=1233812520]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 80.0
+
+[node name="EffectsValue" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/AudioPanel/VolumeGrid" unique_id=768881607]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+text = "80%"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VideoPanel" type="VBoxContainer" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections" unique_id=385455373]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel" unique_id=1607851261]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.86, 0.84, 0.73, 1)
+theme_override_font_sizes/font_size = 26
+text = "Видео"
+
+[node name="Hint" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel" unique_id=1706351139]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.56, 0.57, 0.49, 1)
+text = "Качество графики и эффектов"
+
+[node name="VideoGrid" type="GridContainer" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel" unique_id=726218104]
+layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="PresetLabel" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=471694639]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+text = "Пресет графики"
+vertical_alignment = 1
+
+[node name="PresetOption" type="OptionButton" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=1076554001]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+selected = 2
+item_count = 4
+popup/item_0/text = "Низкий"
+popup/item_0/id = 0
+popup/item_1/text = "Средний"
+popup/item_1/id = 1
+popup/item_2/text = "Высокий"
+popup/item_2/id = 2
+popup/item_3/text = "Ультра"
+popup/item_3/id = 3
+
+[node name="TexturesLabel" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=1179977912]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+text = "Качество текстур"
+vertical_alignment = 1
+
+[node name="TexturesOption" type="OptionButton" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=1478469714]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+selected = 2
+item_count = 4
+popup/item_0/text = "Низкое"
+popup/item_0/id = 0
+popup/item_1/text = "Среднее"
+popup/item_1/id = 1
+popup/item_2/text = "Высокое"
+popup/item_2/id = 2
+popup/item_3/text = "Ультра"
+popup/item_3/id = 3
+
+[node name="EffectsQualityLabel" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=893992888]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+text = "Качество эффектов"
+vertical_alignment = 1
+
+[node name="EffectsQualityOption" type="OptionButton" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=1442700150]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+selected = 1
+item_count = 3
+popup/item_0/text = "Низкое"
+popup/item_0/id = 0
+popup/item_1/text = "Среднее"
+popup/item_1/id = 1
+popup/item_2/text = "Высокое"
+popup/item_2/id = 2
+
+[node name="ShadowsLabel" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=1298494083]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+text = "Качество теней"
+vertical_alignment = 1
+
+[node name="ShadowsOption" type="OptionButton" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=2095782008]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+selected = 1
+item_count = 3
+popup/item_0/text = "Выключены"
+popup/item_0/id = 0
+popup/item_1/text = "Средние"
+popup/item_1/id = 1
+popup/item_2/text = "Высокие"
+popup/item_2/id = 2
+
+[node name="AntiAliasingLabel" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=1249064398]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+text = "Сглаживание"
+vertical_alignment = 1
+
+[node name="AntiAliasingOption" type="OptionButton" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=1758442364]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Выключено"
+popup/item_0/id = 0
+popup/item_1/text = "FXAA"
+popup/item_1/id = 1
+popup/item_2/text = "MSAA 2x"
+popup/item_2/id = 2
+popup/item_3/text = "MSAA 4x"
+popup/item_3/id = 3
+
+[node name="DisplayModeLabel" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=914489424]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+text = "Режим экрана"
+vertical_alignment = 1
+
+[node name="DisplayModeOption" type="OptionButton" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=665075256]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Оконный"
+popup/item_0/id = 0
+popup/item_1/text = "Полноэкранный"
+popup/item_1/id = 1
+popup/item_2/text = "Без рамки"
+popup/item_2/id = 2
+
+[node name="VSyncLabel" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=798810588]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+text = "Вертикальная синхронизация"
+vertical_alignment = 1
+
+[node name="VSyncCheck" type="CheckButton" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/VideoPanel/VideoGrid" unique_id=419315616]
+layout_mode = 2
+button_pressed = true
+
+[node name="ControlsPanel" type="VBoxContainer" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections" unique_id=1542336764]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/ControlsPanel" unique_id=593845765]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.86, 0.84, 0.73, 1)
+theme_override_font_sizes/font_size = 26
+text = "Управление"
+
+[node name="Hint" type="Label" parent="OuterMargin/SettingsLayout/ContentFrame/ContentMargin/Sections/ControlsPanel" unique_id=382300397]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.56, 0.57, 0.49, 1)
+text = "Скоро тут что то будет (наверное)"
+
+[node name="Footer" type="HBoxContainer" parent="OuterMargin/SettingsLayout" unique_id=481706874]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="OuterMargin/SettingsLayout/Footer" unique_id=778003523]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 42)
+layout_mode = 2
+theme = SubResource("Theme_tabs")
+text = "‹ Назад"
+
+[node name="Spacer" type="Control" parent="OuterMargin/SettingsLayout/Footer" unique_id=254167566]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EscHint" type="Label" parent="OuterMargin/SettingsLayout/Footer" unique_id=446326134]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.51, 0.44, 1)
+text = "Esc — вернуться в главное меню"
+vertical_alignment = 1
