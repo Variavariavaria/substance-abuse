@@ -1,11 +1,11 @@
 shader_type canvas_item;
 render_mode unshaded;
 
-uniform vec4 fog_color : source_color = vec4(0.035, 0.045, 0.035, 0.62);
-uniform vec4 haze_color : source_color = vec4(0.16, 0.17, 0.14, 1.0);
-uniform float fog_density : hint_range(0.0, 1.0) = 0.55;
-uniform float fog_speed : hint_range(0.0, 0.2) = 0.02;
-uniform float vignette_strength : hint_range(0.0, 1.0) = 0.65;
+uniform vec4 fog_color : source_color = vec4(0.03, 0.038, 0.028, 0.5);
+uniform vec4 haze_color : source_color = vec4(0.2, 0.22, 0.16, 1.0);
+uniform float fog_density : hint_range(0.0, 1.0) = 0.5;
+uniform float fog_speed : hint_range(0.0, 0.2) = 0.014;
+uniform float vignette_strength : hint_range(0.0, 1.0) = 0.6;
 
 float hash(vec2 p) {
 	p = fract(p * vec2(123.34, 456.21));
