@@ -7,73 +7,56 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_focus"]
 bg_color = Color(0, 0, 0, 0)
 border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.66, 0.67, 0.52, 0.95)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+border_color = Color(0.78, 0.78, 0.7, 0.7)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_hover"]
-content_margin_left = 24.0
-content_margin_top = 14.0
-content_margin_right = 20.0
-content_margin_bottom = 14.0
-bg_color = Color(0.115, 0.125, 0.105, 0.92)
-border_width_left = 4
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.56, 0.57, 0.46, 0.85)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="Gradient" id="Gradient_menu_shade"]
+offsets = PackedFloat32Array(0, 0.55, 1)
+colors = PackedColorArray(0.01, 0.014, 0.01, 0.6, 0.01, 0.014, 0.01, 0.26, 0.01, 0.014, 0.01, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_normal"]
-content_margin_left = 24.0
-content_margin_top = 14.0
-content_margin_right = 20.0
-content_margin_bottom = 14.0
-bg_color = Color(0.045, 0.05, 0.045, 0.8)
-border_width_left = 3
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.34, 0.35, 0.3, 0.42)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_menu_shade"]
+gradient = SubResource("Gradient_menu_shade")
+width = 256
+height = 2
+fill_from = Vector2(0, 0.5)
+fill_to = Vector2(1, 0.5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_pressed"]
-content_margin_left = 24.0
-content_margin_top = 14.0
-content_margin_right = 20.0
-content_margin_bottom = 14.0
-bg_color = Color(0.17, 0.165, 0.125, 0.96)
-border_width_left = 4
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.72, 0.7, 0.52, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="Gradient" id="Gradient_menu_hover"]
+offsets = PackedFloat32Array(0, 0.55, 1)
+colors = PackedColorArray(0.008, 0.011, 0.007, 0.8, 0.008, 0.011, 0.007, 0.34, 0.008, 0.011, 0.007, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_menu_hover"]
+gradient = SubResource("Gradient_menu_hover")
+width = 128
+height = 2
+fill_from = Vector2(0, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_menu_hover"]
+content_margin_left = 18.0
+content_margin_top = 12.0
+content_margin_right = 18.0
+content_margin_bottom = 12.0
+texture = SubResource("GradientTexture2D_menu_hover")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_menu_normal"]
+content_margin_left = 18.0
+content_margin_top = 12.0
+content_margin_right = 18.0
+content_margin_bottom = 12.0
 
 [sub_resource type="Theme" id="Theme_menu"]
-Button/colors/font_color = Color(0.74, 0.73, 0.65, 1)
-Button/colors/font_focus_color = Color(0.82, 0.83, 0.67, 1)
-Button/colors/font_hover_color = Color(0.93, 0.92, 0.8, 1)
-Button/colors/font_pressed_color = Color(0.96, 0.93, 0.76, 1)
-Button/font_sizes/font_size = 20
+Button/colors/font_color = Color(0.78, 0.78, 0.72, 0.9)
+Button/colors/font_focus_color = Color(1, 0.99, 0.94, 1)
+Button/colors/font_hover_color = Color(0.96, 0.95, 0.89, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_shadow_color = Color(0, 0, 0, 0.55)
+Button/constants/shadow_offset_x = 1
+Button/constants/shadow_offset_y = 1
+Button/font_sizes/font_size = 21
 Button/styles/focus = SubResource("StyleBoxFlat_menu_focus")
-Button/styles/hover = SubResource("StyleBoxFlat_menu_hover")
-Button/styles/normal = SubResource("StyleBoxFlat_menu_normal")
-Button/styles/pressed = SubResource("StyleBoxFlat_menu_pressed")
+Button/styles/hover = SubResource("StyleBoxTexture_menu_hover")
+Button/styles/normal = SubResource("StyleBoxEmpty_menu_normal")
+Button/styles/pressed = SubResource("StyleBoxTexture_menu_hover")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_meet_normal"]
 content_margin_left = 24.0
@@ -160,6 +143,15 @@ color = Color(0.05, 0.065, 0.045, 0.35)
 
 [node name="FogOverlay" parent="." unique_id=1571350395 instance=ExtResource("2_fog")]
 layout_mode = 1
+
+[node name="MenuShade" type="TextureRect" parent="."]
+layout_mode = 1
+anchor_right = 0.62
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_menu_shade")
+expand_mode = 1
 
 [node name="MenuLayout" type="VBoxContainer" parent="." unique_id=705746484]
 layout_mode = 1
